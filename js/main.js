@@ -1,11 +1,11 @@
 
-$(function(){
-    $('.loader').fadeOut(1500 , function (){
-        $('.laoding').slideUp(1500 , function (){
-            $('body').css( 'overflow' , 'auto')
-        })
-    });
-})
+// $(function(){
+//     $('.loader').fadeOut(2500 , function (){
+//         $('.laoding').slideUp(2500 , function (){
+//             $('body').css( 'overflow' , 'auto')
+//         })
+//     });
+// })
 
 // side bar 
 
@@ -92,7 +92,7 @@ async function displayData(getDataApi, searchMeal, putInnerHTML) {
     let cartona = '';
     for (let i = 0; i < data.length; i++) {
         cartona += `
-      <div class="col-3 tragetInfo">
+      <div class="col-sm-12 col-md-4 col-lg-3  tragetInfo">
         <div class="w-100 h-100 div-cover">
             <img class="w-100 rounded-3" src= "${data[i].strMealThumb}" alt="">
             <div class="layer rounded-3">
@@ -141,14 +141,14 @@ async function displayInfo() {
 
 
         cartona = `
-        <div class="col-4">
+        <div class="col-sm-12 col-lg-4 ">
                     <div class="w-100 h-100">
                         <img id="imageInfo" class="w-100 rounded-3" src="${finshData.strMealThumb}" alt="">
                         <p class="fw-bold fs-4 mt-1 mealInfo">${finshData.strMeal}</p> 
                     </div>
                 </div>
 
-                <div class="col-8">
+                <div class=" col-sm-12 col-lg-8 ">
                     <div>
                         <h2>Instructions</h2>
 
@@ -326,7 +326,7 @@ async function displayCategoriesData() {
     let cartona = '';
     for (let i = 0; i < data.length; i++) {
         cartona += `
-        <div class="col-3 categoriesInfo">
+        <div class=" col-sm-12  col-md-4 col-lg-3  categoriesInfo">
                     <div class="w-100 h-100 div-cover ">
                         <img class="w-100 rounded-3" src="${data[i].strCategoryThumb}" alt="">
                         <div class="layer-cate rounded-3 text-center pt-2 px-1">
@@ -386,7 +386,7 @@ async function displayAreaData() {
         cartona += `
               
 
-        <div class="col-3 areaInfo">
+        <div class="col-sm-12  col-md-4 col-lg-3 areaInfo">
         <div class="w-100 h-100 div-cover  text-center">
             <i class="fa-solid fa-house-laptop fs"></i>
             <p class="fs-3 fw-bold">${data[i].strArea}</p>
