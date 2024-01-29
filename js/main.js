@@ -1,8 +1,8 @@
 
-$(function(){
-    $('.loader').fadeOut(2500 , function (){
-        $('.laoding').slideUp(2500 , function (){
-            $('body').css( 'overflow' , 'auto')
+$(function () {
+    $('.loader').fadeOut(2500, function () {
+        $('.laoding').slideUp(2500, function () {
+            $('body').css('overflow', 'auto')
         })
     });
 })
@@ -231,7 +231,7 @@ function toClear() {
     displayAreaData();
     displayIngredientsData();
     clearAllInput();
-    rowInfo.innerHTML='';
+    rowInfo.innerHTML = '';
 }
 
 
@@ -546,7 +546,7 @@ function logicInput() {
         if (validationForName() && validationForEmail() && validationForPhone() && validationForAge() && validationForPassword() && validationForRepassword()) {
             button.removeAttribute("disabled")
         }
-        else{
+        else {
             button.setAttribute("disabled", true)
         }
     }
@@ -562,25 +562,43 @@ function eventInput() {
 
     })
 }
+
 eventInput();
 
-function clearAllInput ()
-{
-    input1.value='';
-    input2.value='';
-    input3.value='';
-    input4.value='';
-    input5.value='';
-    input6.value='';
+function clearAllInput() {
+    input1.value = '';
+    input2.value = '';
+    input3.value = '';
+    input4.value = '';
+    input5.value = '';
+    input6.value = '';
 }
 
-function sumitButton(){
-    $(button).on('click' , function (){
+function sumitButton() {
+    $(button).on('click', function () {
         clearAllInput();
     })
 }
 
 sumitButton();
+
+function alertInput(input , validation , toAlertInput ) {
+    $(input).on('input', function () {
+        if (validation()) {
+            $(`.${toAlertInput}`).addClass('d-none');
+        }
+        else {
+            $(`.${toAlertInput}`).removeClass('d-none');
+        }
+    })
+}
+
+alertInput(input1 , validationForName , 'alertInput1');
+alertInput(input2 , validationForEmail , 'alertInput2');
+alertInput(input3 , validationForPhone , 'alertInput3');
+alertInput(input4 , validationForAge , 'alertInput4');
+alertInput(input5 , validationForPassword , 'alertInput5');
+alertInput(input6 , validationForRepassword , 'alertInput6');
 
 //  masterFunction
 
