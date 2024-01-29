@@ -1,11 +1,11 @@
 
-// $(function(){
-//     $('.loader').fadeOut(2500 , function (){
-//         $('.laoding').slideUp(2500 , function (){
-//             $('body').css( 'overflow' , 'auto')
-//         })
-//     });
-// })
+$(function(){
+    $('.loader').fadeOut(2500 , function (){
+        $('.laoding').slideUp(2500 , function (){
+            $('body').css( 'overflow' , 'auto')
+        })
+    });
+})
 
 // side bar 
 
