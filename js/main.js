@@ -182,6 +182,11 @@ async function displayInfo() {
 
 }
 
+function removeDisplayInfo ()
+{
+    rowInfo.innerHTML = '';
+}
+
 function toUl(data) {
 
     let cartonaUl = '';
@@ -231,7 +236,8 @@ function toClear() {
     displayAreaData();
     displayIngredientsData();
     clearAllInput();
-    rowInfo.innerHTML = '';
+    removeDisplayInfo();
+    removeAllAlert();
 }
 
 
@@ -581,6 +587,19 @@ function sumitButton() {
 }
 
 sumitButton();
+
+function removeAlert(toAlertInput){
+    $(`.${toAlertInput}`).addClass('d-none');
+}
+
+function removeAllAlert(){
+    removeAlert('alertInput1')
+    removeAlert('alertInput2')
+    removeAlert('alertInput3')
+    removeAlert('alertInput4')
+    removeAlert('alertInput5')
+    removeAlert('alertInput6')
+}
 
 function alertInput(input , validation , toAlertInput ) {
     $(input).on('input', function () {
