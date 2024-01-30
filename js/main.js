@@ -583,6 +583,7 @@ function clearAllInput() {
 function sumitButton() {
     $(button).on('click', function () {
         clearAllInput();
+        button.setAttribute("disabled", true);
     })
 }
 
