@@ -613,6 +613,18 @@ function alertInput(input , validation , toAlertInput ) {
     })
 }
 
+
+function alertInput_7(input ,  toAlertInput ) {
+    $(input).on('input', function () {
+        if (input5.value == input6.value) {
+          $(`.${toAlertInput}`).addClass('d-none');
+            console.log("hello");
+        }
+    })
+}
+
+alertInput_7 (input5 ,  'alertInput6');
+
 alertInput(input1 , validationForName , 'alertInput1');
 alertInput(input2 , validationForEmail , 'alertInput2');
 alertInput(input3 , validationForPhone , 'alertInput3');
