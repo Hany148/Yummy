@@ -1,11 +1,17 @@
 
-$(function () {
-    $('.loader').fadeOut(2500, function () {
-        $('.laoding').slideUp(2500, function () {
-            $('body').css('overflow', 'auto')
-        })
-    });
-})
+function toload() {
+
+    $(function () {
+        $('.loader').fadeOut(5000, function () {
+            $('.laoding').slideUp(2500, function () {
+                $('body').css('overflow', 'auto')
+            })
+        });
+    })
+
+}
+toload();
+
 
 // side bar 
 
@@ -182,8 +188,7 @@ async function displayInfo() {
 
 }
 
-function removeDisplayInfo ()
-{
+function removeDisplayInfo() {
     rowInfo.innerHTML = '';
 }
 
@@ -192,7 +197,7 @@ function toUl(data) {
     let cartonaUl = '';
     for (let i = 1; i <= 20; i++) {
 
-        if (data['strIngredient' + i] != "") {
+        if (data['strIngredient' + i] != "" && data['strIngredient' + i] != null) {
 
             cartonaUl += `<li class="li"> ${data['strMeasure' + i]} ${data['strIngredient' + i]}</li>`
         }
@@ -589,11 +594,11 @@ function sumitButton() {
 
 sumitButton();
 
-function removeAlert(toAlertInput){
+function removeAlert(toAlertInput) {
     $(`.${toAlertInput}`).addClass('d-none');
 }
 
-function removeAllAlert(){
+function removeAllAlert() {
     removeAlert('alertInput1')
     removeAlert('alertInput2')
     removeAlert('alertInput3')
@@ -602,7 +607,7 @@ function removeAllAlert(){
     removeAlert('alertInput6')
 }
 
-function alertInput(input , validation , toAlertInput ) {
+function alertInput(input, validation, toAlertInput) {
     $(input).on('input', function () {
         if (validation()) {
             $(`.${toAlertInput}`).addClass('d-none');
@@ -614,23 +619,23 @@ function alertInput(input , validation , toAlertInput ) {
 }
 
 
-function alertInput_7(input ,  toAlertInput ) {
+function alertInput_7(input, toAlertInput) {
     $(input).on('input', function () {
         if (input5.value == input6.value) {
-          $(`.${toAlertInput}`).addClass('d-none');
+            $(`.${toAlertInput}`).addClass('d-none');
             console.log("hello");
         }
     })
 }
 
-alertInput_7 (input5 ,  'alertInput6');
+alertInput_7(input5, 'alertInput6');
 
-alertInput(input1 , validationForName , 'alertInput1');
-alertInput(input2 , validationForEmail , 'alertInput2');
-alertInput(input3 , validationForPhone , 'alertInput3');
-alertInput(input4 , validationForAge , 'alertInput4');
-alertInput(input5 , validationForPassword , 'alertInput5');
-alertInput(input6 , validationForRepassword , 'alertInput6');
+alertInput(input1, validationForName, 'alertInput1');
+alertInput(input2, validationForEmail, 'alertInput2');
+alertInput(input3, validationForPhone, 'alertInput3');
+alertInput(input4, validationForAge, 'alertInput4');
+alertInput(input5, validationForPassword, 'alertInput5');
+alertInput(input6, validationForRepassword, 'alertInput6');
 
 //  masterFunction
 
